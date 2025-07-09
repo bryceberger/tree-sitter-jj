@@ -23,7 +23,7 @@
       }
     ],
     "links": {
-      "repository": "https://github.com/bryceberger/tree-sitter-jj"
+      "repository": "https://github.com/bryceberger/tree-sitter-jjtemplate"
     }
   },
   "bindings": {

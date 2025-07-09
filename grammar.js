@@ -8,7 +8,7 @@
 // @ts-check
 
 export default grammar({
-  name: "jj",
+  name: "jjtemplate",
 
   rules: {
     source_file: ($) =>

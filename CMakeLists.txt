@@ -1,9 +1,9 @@
 cmake_minimum_required(VERSION 3.13)
 
-project(tree-sitter-jj
+project(tree-sitter-jjtemplate
         VERSION "0.1.0"
         DESCRIPTION "Tree-sitter grammar for jj templates"
-        HOMEPAGE_URL "https://github.com/bryceberger/tree-sitter-jj"
+        HOMEPAGE_URL "https://github.com/bryceberger/tree-sitter-jjtemplate"
         LANGUAGES C)
 
 option(BUILD_SHARED_LIBS "Build using shared libraries" ON)
@@ -24,42 +24,42 @@ add_custom_command(OUTPUT "${CMAKE_CURRENT_SOURCE_DIR}/src/parser.c"
                    WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}"
                    COMMENT "Generating parser.c")
 
-add_library(tree-sitter-jj src/parser.c)
+add_library(tree-sitter-jjtemplate src/parser.c)
 if(EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/src/scanner.c)
-  target_sources(tree-sitter-jj PRIVATE src/scanner.c)
+  target_sources(tree-sitter-jjtemplate PRIVATE src/scanner.c)
 endif()
-target_include_directories(tree-sitter-jj
+target_include_directories(tree-sitter-jjtemplate
                            PRIVATE src
                            INTERFACE $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/bindings/c>
                                      $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>)
 
-target_compile_definitions(tree-sitter-jj PRIVATE
+target_compile_definitions(tree-sitter-jjtemplate PRIVATE
                            $<$<BOOL:${TREE_SITTER_REUSE_ALLOCATOR}>:TREE_SITTER_REUSE_ALLOCATOR>
                            $<$<CONFIG:Debug>:TREE_SITTER_DEBUG>)
 
-set_target_properties(tree-sitter-jj
+set_target_properties(tree-sitter-jjtemplate
                       PROPERTIES
                       C_STANDARD 11
                       POSITION_INDEPENDENT_CODE ON
                       SOVERSION "${TREE_SITTER_ABI_VERSION}.${PROJECT_VERSION_MAJOR}"
                       DEFINE_SYMBOL "")
 
-configure_file(bindings/c/tree-sitter-jj.pc.in
-               "${CMAKE_CURRENT_BINARY_DIR}/tree-sitter-jj.pc" @ONLY)
+configure_file(bindings/c/tree-sitter-jjtemplate.pc.in
+               "${CMAKE_CURRENT_BINARY_DIR}/tree-sitter-jjtemplate.pc" @ONLY)
 
 include(GNUInstallDirs)
 
 install(DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/bindings/c/tree_sitter"
         DESTINATION "${CMAKE_INSTALL_INCLUDEDIR}"
         FILES_MATCHING PATTERN "*.h")
-install(FILES "${CMAKE_CURRENT_BINARY_DIR}/tree-sitter-jj.pc"
+install(FILES "${CMAKE_CURRENT_BINARY_DIR}/tree-sitter-jjtemplate.pc"
         DESTINATION "${CMAKE_INSTALL_DATAROOTDIR}/pkgconfig")
-install(TARGETS tree-sitter-jj
+install(TARGETS tree-sitter-jjtemplate
         LIBRARY DESTINATION "${CMAKE_INSTALL_LIBDIR}")
 
 file(GLOB QUERIES queries/*.scm)
 install(FILES ${QUERIES}
-        DESTINATION "${CMAKE_INSTALL_DATADIR}/tree-sitter/queries/jj")
+        DESTINATION "${CMAKE_INSTALL_DATADIR}/tree-sitter/queries/jjtemplate")
 
 add_custom_target(ts-test "${TREE_SITTER_CLI}" test
                   WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}"

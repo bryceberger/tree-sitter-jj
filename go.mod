@@ -1,4 +1,4 @@
-module github.com/bryceberger/tree-sitter-jj
+module github.com/bryceberger/tree-sitter-jjtemplate
 
 go 1.22
 

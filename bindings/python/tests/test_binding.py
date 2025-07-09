@@ -1,12 +1,12 @@
 from unittest import TestCase
 
 import tree_sitter
-import tree_sitter_jj
+import tree_sitter_jjtemplate
 
 
 class TestLanguage(TestCase):
     def test_can_load_grammar(self):
         try:
-            tree_sitter.Language(tree_sitter_jj.language())
+            tree_sitter.Language(tree_sitter_jjtemplate.language())
         except Exception:
-            self.fail("Error loading Jj grammar")
+            self.fail("Error loading Jjtemplate grammar")

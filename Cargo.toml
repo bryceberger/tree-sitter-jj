@@ -1,13 +1,13 @@
 [package]
-name = "tree-sitter-jj"
+name = "tree-sitter-jjtemplate"
 description = "Tree-sitter grammar for jj templates"
 version = "0.1.0"
 authors = ["Bryce Berger <bryce.z.berger@gmail.com>"]
 license = "MIT"
 readme = "README.md"
-keywords = ["incremental", "parsing", "tree-sitter", "jj"]
+keywords = ["incremental", "parsing", "tree-sitter", "jjtemplate"]
 categories = ["parser-implementations", "parsing", "text-editors"]
-repository = "https://github.com/bryceberger/tree-sitter-jj"
+repository = "https://github.com/bryceberger/tree-sitter-jjtemplate"
 edition = "2021"
 autoexamples = false
 
