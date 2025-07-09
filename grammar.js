@@ -72,14 +72,8 @@ export default grammar({
 
     identifier: (_) => /[a-zA-Z_][a-zA-Z0-9_]*/,
 
-    integer_literal: (_) => choice(/[1-9][0-9]*/, "0"),
-
-    raw_string_literal: (_) => /'[^']*'/,
-
     string_literal: (_) => /"([^"\\]*(\\.[^"\\]*)*)"/,
-    // string_literal: ($) =>
-    //   seq('"', repeat(choice($._string_content, $._string_escape)), '"'),
-    // _string_content: (_) => token(prec(-1, /[^$\\\[\]"]+/)),
-    // _string_escape: (_) => /\\./,
+    raw_string_literal: (_) => /'[^']*'/,
+    integer_literal: (_) => choice(/[1-9][0-9]*/, "0"),
   },
 });
