@@ -4,6 +4,7 @@
   "description": "Tree-sitter grammar for jj templates",
   "repository": "https://github.com/bryceberger/tree-sitter-jj",
   "license": "MIT",
+  "type": "module",
   "author": {
     "name": "Bryce Berger",
     "email": "bryce.z.berger@gmail.com"
