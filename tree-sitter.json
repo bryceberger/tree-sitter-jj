@@ -4,7 +4,7 @@
     {
       "name": "jjtemplate",
       "camelcase": "JjTemplate",
-      "scope": "source.jjtemplate",
+      "scope": "jj.template",
       "file-types": [
         "jjtemplate"
       ],
