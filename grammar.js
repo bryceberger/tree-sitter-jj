@@ -11,7 +11,13 @@ export default grammar({
   name: "jj",
 
   rules: {
-    source_file: ($) => $.template,
+    source_file: ($) =>
+      choice(
+        seq("'''", $.template, "'''"),
+        seq('"""', $.template, '"""'),
+        seq("'", $.template, "'"),
+        seq('"', $.template, '"'),
+      ),
 
     template: ($) =>
       prec.right(seq($.expression, repeat(seq("++", $.expression)))),

@@ -2,14 +2,14 @@
   "$schema": "https://tree-sitter.github.io/tree-sitter/assets/schemas/config.schema.json",
   "grammars": [
     {
-      "name": "jj",
-      "camelcase": "jj",
-      "scope": "source.jj",
+      "name": "jjtemplate",
+      "camelcase": "JjTemplate",
+      "scope": "source.jjtemplate",
       "file-types": [
-        "jj"
+        "jjtemplate"
       ],
-      "injection-regex": "^jj$",
-      "class-name": "TreeSitterJj"
+      "injection-regex": "^jjtemplate$",
+      "class-name": "TreeSitterJjTemplate"
     }
   ],
   "metadata": {
