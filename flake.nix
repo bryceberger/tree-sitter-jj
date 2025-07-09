@@ -8,6 +8,7 @@
       nativeBuildInputs = with pkgs; [
         tree-sitter
         nodejs_24
+        python3
         typescript-language-server
       ];
     };
