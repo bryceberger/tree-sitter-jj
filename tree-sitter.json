@@ -1,0 +1,38 @@
+{
+  "$schema": "https://tree-sitter.github.io/tree-sitter/assets/schemas/config.schema.json",
+  "grammars": [
+    {
+      "name": "jj",
+      "camelcase": "jj",
+      "scope": "source.jj",
+      "file-types": [
+        "jj"
+      ],
+      "injection-regex": "^jj$",
+      "class-name": "TreeSitterJj"
+    }
+  ],
+  "metadata": {
+    "version": "0.1.0",
+    "license": "MIT",
+    "description": "Tree-sitter grammar for jj templates",
+    "authors": [
+      {
+        "name": "Bryce Berger",
+        "email": "bryce.z.berger@gmail.com"
+      }
+    ],
+    "links": {
+      "repository": "https://github.com/bryceberger/tree-sitter-jj"
+    }
+  },
+  "bindings": {
+    "c": true,
+    "go": true,
+    "node": true,
+    "python": true,
+    "rust": true,
+    "swift": true,
+    "zig": false
+  }
+}
