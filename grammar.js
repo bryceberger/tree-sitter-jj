@@ -15,8 +15,7 @@ export default grammar({
       choice(
         seq("'''", $.template, "'''"),
         seq('"""', $.template, '"""'),
-        seq("'", $.template, "'"),
-        seq('"', $.template, '"'),
+        $.template,
       ),
 
     template: ($) =>
